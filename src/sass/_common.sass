@@ -1,0 +1,842 @@
+@import url(https://fonts.googleapis.com/css?family=Russo+One&subset=latin,cyrillic)
+@import url(https://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic)
+// fonts
+$default-fonts: Arial, sans-serif
+=rus
+	font-family: 'Russo One', $default-fonts
+	font-weight: 400
+=sans
+	font-family: 'PT Sans', $default-fonts
+	font-weight: 400
+
+// colors
+$ocean: #4987a4
+
+/* ==========================================================================
+	 Main Styles
+	 ========================================================================== */
+a:hover, a:focus
+	text-decoration: none
+a
+	color: inherit
+	text-decoration: none
+svg
+	width: 100%
+	height: 100%
+.is-hidden
+	display: none
+.row
+	+pie-clearfix
+// *
+// 	+selection
+// 		color: #fff
+// 		background-color: $red
+body
+	min-width: 320px
+	font-size: 16px
+	+sans
+	font-size: 18px
+	color: #333
+	line-height: 1.55556
+.wrapper
+	overflow: hidden
+	margin: 0 auto
+	min-height: 100%
+.wrap
+	max-width: 1230px
+	margin-left: auto
+	margin-right: auto
+	padding-left: 15px
+	padding-right: 15px
+	transition: all 0.3s
+/* ==========================================================================
+	 Header
+	 ========================================================================== */
+.header
+	position: relative
+	padding-top: 10px
+	padding-bottom: 15px
+	.row
+		margin-left: 90px
+		+r(1023)
+			margin-left: 60px
+	&__title
+		overflow: hidden
+		margin-left: 90px
+		margin-bottom: 15px
+		+rus
+		font-size: 39px
+		color: $ocean
+		line-height: 1
+		+r(1220)
+			font-size: 33px
+		+r(1080)
+			font-size: 28px
+		+r(1023)
+			margin-left: 60px
+		+r(767)
+			font-size: 26px
+		+r(639)
+			font-size: 20px
+	&__phone
+		float: right
+		margin-right: 20px
+		+rus
+		font-size: 27px
+		color: $ocean
+		line-height: 1
+		+r(1220)
+			font-size: 20px
+		+r(1023)
+			float: left
+.logo
+	float: left
+	margin-right: 10px
+	width: 90px
+	+r(1023)
+		width: 60px
+	img
+		width: 100%
+		height: auto
+		vertical-align: middle
+.nav
+	float: left
+	font-size: 24px
+	color: #854d2c
+	line-height: 1
+	+r(1220)
+		font-size: 20px
+	+r(1023)
+		overflow: hidden
+		height: 0
+		position: absolute
+		z-index: 99
+		top: 100%
+		left: 0
+		right: 0
+		text-align: center
+		background-color: #ffffff
+		border-bottom: 2px solid lighten($ocean,40)
+		transition: all 0.4s
+	&.is-active
+		+r(1023)
+			height: 108px
+			transition: all 0.4s
+	&__item
+		display: inline-block
+		+r(1023)
+			display: block
+		& + &
+			&:before
+				content: '/'
+				display: inline-block
+				margin-left: 5px
+				margin-right: 9px
+				+r(1023)
+					content: none
+					display: none
+	&__link
+		text-decoration: underline
+		+r(1023)
+			display: block
+			padding-top: 7px
+			padding-bottom: 7px
+			text-decoration: none
+			border-top: 2px solid lighten($ocean,40)
+		&:hover
+			color: $ocean
+			text-decoration: underline
+			+r(1023)
+				text-decoration: none
+#menu_toggle
+	display: none
+	position: relative
+	top: -5px
+	float: right
+	width: 24px
+	height: 24px
+	background-color: transparent
+	cursor: pointer
+	+vertical
+	+r(1023)
+		display: block
+	&:before
+		margin-right: 0
+	button
+		display: inline-block
+		margin-right: -4px
+		width: 100%
+		background-color: transparent
+		text-indent: -9999px
+		overflow: hidden
+		vertical-align: middle
+	span
+		position: relative
+		margin-top: 8px
+		margin-bottom: 8px
+		-webkit-user-select: none
+		-moz-user-select: none
+		-ms-user-select: none
+		user-select: none
+		&,
+		&:before,
+		&:after
+			display: block
+			width: 100%
+			height: 3px
+			background-color: $ocean
+			transition-duration: 0.3s
+			/* autoprefixer: off */
+			-webkit-transition-property: background-color, -webkit-transform
+			-moz-transition-property: background-color, -moz-transform
+			-o-transition-property: background-color, -o-transform
+			transition-property: background-color, transform
+		&:before,
+		&:after
+			position: absolute
+			content: ""
+		&:before
+			top: -8px
+		&:after
+			top: 8px
+	&.is-active span
+		background-color: transparent
+	&.is-active span:before
+		transform: translateY(8px) rotate(45deg)
+	&.is-active span:after
+		transform: translateY(-8px) rotate(-45deg)
+
+/* ==========================================================================
+	 Main
+	 ========================================================================== */
+.title
+	margin-bottom: 20px
+	+rus
+	font-size: 33px
+	color: $ocean
+	line-height: 1.1
+	text-align: center
+	+r(1023)
+		font-size: 30px
+		br
+			display: none
+	+r(767)
+		font-size: 24px
+	+r(479)
+		font-size: 20px
+	+r(413)
+		font-size: 18px
+	&-desc
+		font-size: 24px
+		color: $ocean
+		text-align: center
+		font-weight: normal
+		+r(1023)
+			font-size: 20px
+		+r(767)
+			font-size: 18px
+		+r(479)
+			font-size: 16px
+.subtitle
+	position: relative
+	display: block
+	margin-bottom: 20px
+	padding-bottom: 15px
+	font-size: 32px
+	+r(1023)
+		font-size: 28px
+		line-height: 1.2
+	+r(767)
+		font-size: 24px
+	+r(639)
+		font-size: 20px
+	+r(479)
+
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 30%
+		height: 2px
+		border-radius: 100%
+		width: 40%
+		background: linear-gradient(to right, #ffffff 0%, #000000 35%, #000000 65%, #ffffff 100%)
+	text-align: center
+	font-weight: normal
+.section
+	padding-top: 20px
+	padding-bottom: 50px
+	+pie-clearfix
+.section_1
+	position: relative
+	height: 734px
+	background: url('../img/content/main.jpg') center top no-repeat
+	background-size: auto 100%
+	+r(1023)
+		height: 500px
+		background-size: auto 500px
+		br
+			display: none
+	+r(479)
+		height: 350px
+		background-size: auto 350px
+	.wrap
+		position: relative
+		height: 100%
+	&__bg
+		width: 100%
+		height: auto
+		vertical-align: middle
+	&__inner
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+	&__block
+		float: right
+		margin-top: 15px
+		padding: 15px 20px 25px
+		+rus
+		line-height: 1.1
+		text-align: center
+		background-color: rgba(255,255,255,.67)
+		border-radius: 6px
+		+r(1023)
+			width: 50%
+		+r(639)
+			width: 100%
+		+r(479)
+			margin-top: 5px
+			padding-top: 5px
+			padding-bottom: 5px
+	&__title
+		margin-bottom: 20px
+		font-size: 40px
+		color: #ff9900
+		font-weight: normal
+		+r(1023)
+			font-size: 24px
+		+r(768)
+			font-size: 20px
+		+r(639)
+			font-size: 24px
+			color: $ocean
+		+r(479)
+			margin-bottom: 5px
+		+r(414)
+			font-size: 20px
+	&__desc
+		font-size: 16px
+		color: $ocean
+		font-weight: normal
+		+r(767)
+			font-size: 14px
+	&__btn
+		position: absolute
+		top: 44%
+		left: 61%
+		padding: 15px 15px 20px
+		font-family: 'Tahoma', $default-fonts
+		font-size: 28px
+		color: #ffffff
+		line-height: 1
+		font-weight: bold
+		background-color: #67b3d6
+		border-bottom: 9px solid #5d9ab7
+		+r(1200)
+			left: 64%
+		+r(1023)
+			left: 63%
+			padding-top: 10px
+			padding-bottom: 15px
+			font-size: 20px
+			font-weight: normal
+		+r(767)
+			left: 65%
+		+r(639)
+			left: 67%
+			padding: 5px 10px 7px
+			font-size: 14px
+		+r(479)
+			margin-left: auto
+			margin-right: auto
+			font-size: 16px
+			padding: 10px 15px 15px
+			+vcenter
+			top: 65%
+			white-space: nowrap
+		&:hover
+			background-color: darken(#67b3d6,5)
+.section_2
+	&__col
+		float: left
+		width: 20%
+		+r(639)
+			display: none
+		& + &
+			width: 80%
+			+r(639)
+				display: block
+				width: auto
+	&__bg
+		margin-top: 30px
+		width: 115%
+		height: auto
+		vertical-align: middle
+		+r(767)
+			margin-top: 170px
+			width: 95%
+	p
+		padding-left: 50px
+		padding-right: 50px
+		text-align: center
+		+r(1023)
+			padding-left: 25px
+			padding-right: 25px
+		+r(639)
+			padding-left: 0
+			padding-right: 0
+		+r(479)
+			line-height: 1.3
+		& + p
+			margin-top: 30px
+			padding-left: 100px
+			padding-right: 100px
+			+r(1023)
+				padding-left: 0
+				padding-right: 0
+.type
+	margin-bottom: 30px
+	+pie-clearfix
+	&__item
+		float: left
+		padding-left: 70px
+		min-height: 64px
+		width: 33.3%
+		background: url('../img/icons/type-1.png') left top no-repeat
+		+r(767)
+			padding-left: 55px
+			background-size: auto 75%
+		+r(479)
+			width: 100%
+			text-align: center
+			background-position: 30% top
+		+r(413)
+			background-position: 20% top
+		& + &
+			background-image: url('../img/icons/type-2.png')
+		& + & + &
+			background-image: url('../img/icons/type-3.png')
+	&__name
+		+rus
+		font-size: 24px
+		color: #f39700
+		line-height: 1.3
+	&__more
+		font-size: 14px
+		line-height: 1.6
+		text-decoration: underline
+		font-style: italic
+		&:hover
+			text-decoration: underline
+.section_3
+	padding-top: 30px
+	background: url('../img/icons/border.png') top left repeat-x
+	+r(479)
+		padding-bottom: 0
+.test
+	padding-top: 20px
+	+pie-clearfix
+	&__item
+		position: relative
+		float: left
+		width: 33.3%
+		+r(639)
+			float: none
+			width: 100%
+			text-align: center
+		+r(479)
+			text-align: left
+		& + &
+			+r(639)
+				margin-top: 20px
+		&:nth-child(1)
+			.test__img
+				img
+					width: 60%
+					+r(639)
+						width: 30%
+			.icon
+				display: block
+				width: 54px
+				height: 60px
+				background: url('../img/icons/test-1.png') center center no-repeat
+		&:nth-child(2)
+			&:before
+				content: ''
+				position: absolute
+				z-index: 1
+				left: -80px
+				bottom: 130px
+				width: 102px
+				height: 39px
+				background: url('../img/icons/arrow-bot.png') 0 0 no-repeat
+				+r(1023)
+					bottom: 230px
+				+r(767)
+					left: -100px
+					bottom: 180px
+				+r(639)
+					content: none
+					display: none
+			.icon
+				display: block
+				width: 42px
+				height: 60px
+				background: url('../img/icons/test-2.png') center center no-repeat
+			&:after
+				content: ''
+				position: absolute
+				z-index: 1
+				right: -30px
+				top: 25px
+				width: 108px
+				height: 39px
+				background: url('../img/icons/arrow-top.png') 0 0 no-repeat
+				+r(767)
+					top: 50px
+				+r(639)
+					content: none
+					display: none
+			.test__img
+		&:nth-child(3)
+			.test__img
+				img
+					margin-top: -20px
+					width: 85%
+					+r(639)
+						width: 40%
+			.icon
+				display: block
+				width: 57px
+				height: 60px
+				background: url('../img/icons/test-3.png') center center no-repeat
+	&__img
+		margin-bottom: 30px
+		height: 300px
+		text-align: center
+		+vertical
+		+r(639)
+			margin-bottom: 10px
+			height: auto
+		&:before
+			margin-right: -4px
+		img
+			position: relative
+			left: -15px
+			display: inline-block
+			width: 100%
+			height: auto
+			vertical-align: middle
+			+r(639)
+				width: 50%
+	&__inner
+		padding-left: 40px
+		+pie-clearfix
+		+r(1023)
+			padding-left: 5px
+			font-size: 14px
+			line-height: 1.2
+		+r(639)
+			display: inline-block
+			min-height: 100px
+			font-size: 18px
+			text-align: left
+		+r(479)
+			font-size: 14px
+	&__icon
+		float: left
+		margin-right: 10px
+		+r(1023)
+			float: none
+		+r(639)
+			float: left
+	&__text
+		float: left
+		+r(479)
+			margin-top: 10px
+.report
+	margin-top: 50px
+	padding-left: 10%
+	padding-right: 10%
+	line-height: 1.2
+	+r(1023)
+		padding-left: 0
+		padding-right: 0
+	&__item
+		display: inline-block
+		margin-bottom: 40px
+		padding-left: 85px
+		width: 47.5%
+		margin-right: -4px
+		background: url('../img/icons/report-1.png') left top no-repeat
+		vertical-align: top
+		+r(767)
+			padding-left: 45px
+			font-size: 14px
+			background-size: auto 35px
+		+r(479)
+			display: block
+			padding-left: 50px
+			width: auto
+			font-size: 16px
+		&:nth-child(even)
+			margin-left: 5%
+			+r(479)
+				margin-left: 0
+	&__title
+		margin-bottom: 3px
+		font-size: 20px
+		font-weight: bold
+		+r(767)
+			font-size: 16px
+@for $i from 2 through 10
+	.report__item:nth-child(#{$i})
+		background-image: url('../img/icons/report-#{$i}.png')
+.section_5
+	padding-top: 30px
+	background: url('../img/icons/border.png') top left repeat-x
+.service
+	margin-top: 50px
+	font-size: 14px
+	line-height: 1.25
+	margin-left: -1.5%
+	&__item
+		display: inline-block
+		margin-bottom: 15px
+		margin-left: 1.5%
+		margin-right: -4px
+		width: 48.5%
+		vertical-align: top
+		+pie-clearfix
+		+r(1023)
+			margin-bottom: 30px
+		+r(767)
+			display: block
+			margin-left: 0
+			width: auto
+	&__img
+		float: left
+		margin-right: 15px
+		img
+			width: 100%
+			height: auto
+			vertical-align: middle
+			+r(639)
+				width: 120px
+			+r(479)
+				width: 80px
+	&__title
+		margin-bottom: 10px
+		font-size: 16px
+		font-weight: bold
+.section_6
+	padding-top: 30px
+	background: url('../img/icons/border.png') top left repeat-x
+.celebrity
+	margin-top: 50px
+	font-size: 14px
+	line-height: 1.2
+	+pie-clearfix
+	&__item
+		float: left
+		padding-left: 15px
+		padding-right: 15px
+		width: 16.6%
+		+r(1023)
+			float: none
+			display: inline-block
+			margin-bottom: 15px
+			margin-right: -4px
+			width: 33.3%
+			vertical-align: top
+		+r(639)
+			width: 50%
+		+r(413)
+			width: auto
+	&__img
+		padding-left: 5px
+		padding-right: 5px
+		margin-bottom: 10px
+		text-align: center
+		img
+			width: 100%
+			height: auto
+			vertical-align: middle
+			+r(1023)
+				display: inline-block
+				width: 60%
+			+r(413)
+				width: 40%
+	&__name
+		font-weight: bold
+		font-size: 18px
+		text-align: center
+	&__surname
+		text-transform: uppercase
+	&__info
+		font-style: italic
+		text-align: center
+		margin-bottom: 15px
+.section_7
+	padding-top: 30px
+	background: url('../img/icons/border.png') top left repeat-x
+	&__col
+		float: left
+		margin-top: 40px
+		padding-left: 25px
+		padding-right: 25px
+		width: 50%
+		+r(767)
+			float: none
+			width: auto
+	&__img
+		width: 100%
+		height: auto
+		vertical-align: middle
+.text-list
+	font-size: 20px
+	color: $ocean
+	line-height: 1.25
+	+r(1023)
+		font-size: 16px
+	+r(767)
+		font-size: 18px
+	&__item
+		margin-bottom: 30px
+		+r(767)
+			margin-bottom: 20px
+.section_8
+	padding-top: 30px
+	background: url('../img/icons/border.png') top left repeat-x
+	&__col
+		float: right
+		width: 65%
+		& + &
+			width: 30%
+			margin-right: 5%
+			+r(1023)
+				float: none
+				margin-right: 0
+				width: auto
+		+r(1023)
+			float: none
+			width: auto
+.comments
+	font-size: 14px
+	line-height: 1.3
+	&__title
+		margin-bottom: 15px
+		font-size: 16px
+		font-weight: bold
+	&__item
+		padding-top: 15px
+		padding-bottom: 15px
+		& + &
+			border-top: 1px solid #cccccc
+	&__info
+		margin-bottom: 5px
+	&__user
+		font-weight: bold
+	&__time
+		color: #999999
+	&__text
+		color: #555555
+.video
+	position: relative
+	margin-top: 40px
+	+ratio(16,9)
+	+r(1023)
+		margin-left: auto
+		margin-right: auto
+		margin-bottom: 40px
+		width: 75%
+	+r(639)
+		width: 100%
+	&-el
+		+ratio-in
+		height: 100% !important
+		width: 100% !important
+.section_9
+	padding-top: 30px
+	padding-bottom: 70px
+	border-bottom: 30px solid $ocean
+	background: url('../img/icons/border.png') top left repeat-x
+.location
+	margin-top: 40px
+	+rus
+	font-size: 33px
+	color: #ff9900
+	line-height: 36px
+	+r(1200)
+		font-size: 24px
+	+r(1023)
+		font-size: 20px
+	&__col
+		float: right
+		width: 35%
+		+r(1023)
+			float: none
+			width: auto
+		& + &
+			margin-right: 5%
+			width: 60%
+			+r(1023)
+				margin-right: 0
+				width: auto
+	&__phone
+		margin-bottom: 30px
+		line-height: 64px
+		text-align: center
+		+pie-clearfix
+		+r(1023)
+			margin-bottom: 0
+		img
+			float: left
+			margin-right: 10px
+			vertical-align: middle
+			+r(1023)
+				position: relative
+				left: -15px
+				float: none
+				display: inline-block
+				width: 50px
+	&__number
+		display: block
+		+r(1023)
+			display: inline-block
+	&__mark
+		text-align: center
+		img
+			position: relative
+			float: left
+			left: -5px
+			margin-right: 10px
+			+r(1023)
+				float: none
+				display: inline-block
+				width: 50px
+				vertical-align: 14px
+	&__address
+		display: block
+		overflow: hidden
+		+r(1023)
+			display: inline-block
+#map
+	height: 220px
+	+r(1023)
+		height: 300px
+/* ==========================================================================
+	 Other Styles
+	 ========================================================================== */
